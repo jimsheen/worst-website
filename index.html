@@ -120,16 +120,25 @@
             font-size: 11px;
             opacity: 0;
             transition: opacity 0.1s;
+            color: black !important;
+        }
+
+        .error-dialog * {
+            color: black !important;
         }
 
         .error-titlebar {
             background: linear-gradient(to right, var(--win95-blue), var(--win95-light-blue));
-            color: white;
+            color: white !important;
             padding: 2px 4px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: bold;
+        }
+
+        .error-titlebar * {
+            color: white !important;
         }
 
         .error-close {
@@ -153,6 +162,12 @@
             display: flex;
             gap: 10px;
             align-items: center;
+            background-color: var(--win95-gray);
+            color: black !important;
+        }
+
+        .error-content div {
+            color: black !important;
         }
 
         .error-icon {
@@ -163,6 +178,7 @@
             padding: 8px;
             text-align: center;
             border-top: 1px solid var(--win95-dark-gray);
+            background-color: var(--win95-gray);
         }
 
         .error-button {
@@ -173,6 +189,7 @@
             font-size: 11px;
             cursor: pointer;
             min-width: 75px;
+            color: black !important;
         }
 
         .error-button:active {
@@ -435,6 +452,218 @@
             font-size: 11px;
             color: black;
         }
+
+        /* ========== FAKE ADVERTS STYLES ========== */
+        .fake-ad {
+            margin: 15px 0;
+            border: 3px ridge #FFD700;
+            background-color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 5px 5px 0px #000000;
+        }
+
+        .fake-ad:hover {
+            transform: scale(1.02);
+            box-shadow: 7px 7px 0px #000000;
+        }
+
+        /* Download RAM Ad */
+        .ad-download-ram {
+            background: linear-gradient(to bottom, #0000FF, #00FFFF);
+            border: 5px solid #FFFF00;
+            animation: shake 0.5s infinite;
+        }
+
+        .ad-download-ram .ad-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFFF00;
+            text-shadow: 2px 2px #FF0000;
+            animation: blinker 0.8s linear infinite;
+        }
+
+        .ad-download-ram .ad-button {
+            background: linear-gradient(to bottom, #FF0000, #CC0000);
+            color: #FFFF00;
+            padding: 10px 20px;
+            border: 3px outset #FF6666;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0;
+            display: inline-block;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+
+        /* Million Visitor Ad */
+        .ad-million-visitor {
+            background: radial-gradient(circle, #FFFF00, #FF0000);
+            border: 5px double #00FF00;
+            animation: rainbow-border 2s linear infinite;
+        }
+
+        .ad-million-visitor .ad-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-shadow: 3px 3px #000000;
+            animation: pulse 0.5s infinite;
+        }
+
+        .ad-million-visitor .ad-subtitle {
+            font-size: 14px;
+            color: #000000;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        @keyframes rainbow-border {
+            0% { border-color: #FF0000; }
+            25% { border-color: #FFFF00; }
+            50% { border-color: #00FF00; }
+            75% { border-color: #00FFFF; }
+            100% { border-color: #FF0000; }
+        }
+
+        /* Punch Monkey Ad */
+        .ad-punch-monkey {
+            background: linear-gradient(to right, #FF00FF, #00FFFF);
+            border: 4px solid #000000;
+        }
+
+        .ad-punch-monkey .ad-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFFF00;
+            text-shadow: 2px 2px #FF0000, -2px -2px #0000FF;
+        }
+
+        .ad-punch-monkey .monkey-target {
+            font-size: 60px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Free Cursors Ad */
+        .ad-free-cursors {
+            background: linear-gradient(to bottom, #FF00FF, #00FFFF);
+            border: 5px ridge #FFFF00;
+        }
+
+        .ad-free-cursors .ad-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFFF00;
+            text-shadow: 2px 2px #FF0000, -2px -2px #0000FF;
+            animation: rainbow 2s linear infinite;
+        }
+
+        .ad-free-cursors .ad-count {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-shadow: 2px 2px #000000;
+        }
+
+        .ad-free-cursors .cursor-icons {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        /* Hot Singles Ad */
+        .ad-hot-singles {
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            border: 5px outset #FF69B4;
+        }
+
+        .ad-hot-singles .ad-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-shadow: 2px 2px #000000;
+        }
+
+        .ad-hot-singles .ad-location {
+            font-size: 12px;
+            color: #FFFF00;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .ad-hot-singles .ad-cta {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            padding: 8px 16px;
+            border: 2px solid #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+            animation: blinker 1s linear infinite;
+        }
+
+        /* Ask Jeeves Search Bar */
+        .askjeeves-search {
+            background: linear-gradient(to bottom, #FFFFFF, #E0E0E0);
+            border: 3px ridge #808080;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 5px 5px 0px #000000;
+        }
+
+        .askjeeves-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .askjeeves-logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .askjeeves-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000080;
+        }
+
+        .askjeeves-input {
+            width: 70%;
+            padding: 8px;
+            border: 2px inset #808080;
+            font-size: 14px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .askjeeves-button {
+            padding: 8px 20px;
+            background: linear-gradient(to bottom, #FFFFFF, #C0C0C0);
+            border: 2px outset #808080;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .askjeeves-button:active {
+            border-style: inset;
+        }
     </style>
 </head>
 <body>
@@ -561,6 +790,23 @@ Press any key to continue _
         </button>
         <br>
 
+        <!-- Ask Jeeves Search Bar -->
+        <div class="askjeeves-search">
+            <div class="askjeeves-logo">
+                <img src="assets/images/ask-jeeves-logo.png" alt="Ask Jeeves">
+                <div class="askjeeves-title">Ask Jeeves!</div>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Ask Jeeves says: I have no idea! Try AltaVista instead.');" style="text-align: center;">
+                <input type="text" class="askjeeves-input" placeholder="What would you like to know?" value="">
+                <button type="submit" class="askjeeves-button">ASK!</button>
+            </form>
+            <div style="text-align: center; margin-top: 10px;">
+                <font size="1" color="#666666">
+                    Powered by Ask Jeeves™ - The Butler of the Internet!
+                </font>
+            </div>
+        </div>
+
         <!-- Main Content Frame -->
         <table width="95%" cellpadding="10">
             <tr>
@@ -591,6 +837,42 @@ Press any key to continue _
                                 <a href="#">NEXT &gt;&gt;</a>
                             </font>
                         </center>
+                    </div>
+
+                    <!-- FAKE ADVERT 1: Download RAM -->
+                    <div class="fake-ad ad-download-ram" onclick="alert('Downloading RAM.exe... 1337 MB remaining!')">
+                        <div class="ad-title">🚀 FREE RAM! 🚀</div>
+                        <div style="color: #FFFFFF; font-size: 12px; margin: 5px 0;">
+                            DOWNLOAD MORE RAM!
+                        </div>
+                        <div class="ad-button">DOWNLOAD NOW!</div>
+                        <div style="color: #FFFF00; font-size: 10px;">
+                            ⚡ 100% FREE! ⚡<br>
+                            Increase Speed 1000%!
+                        </div>
+                    </div>
+
+                    <!-- FAKE ADVERT 2: Million Visitor -->
+                    <div class="fake-ad ad-million-visitor" onclick="alert('CONGRATULATIONS! To claim your FREE iPod, please send $99.99 for shipping and handling!')">
+                        <div class="ad-title">🎉 YOU WON! 🎉</div>
+                        <div class="ad-subtitle">
+                            You are visitor<br>
+                            <span style="font-size: 20px;">#1,000,000</span>
+                        </div>
+                        <div style="color: #FFFFFF; font-size: 12px; margin: 10px 0;">
+                            Click HERE to claim your<br>
+                            <b style="font-size: 16px;">FREE iPod!!!</b>
+                        </div>
+                    </div>
+
+                    <!-- FAKE ADVERT 3: Punch Monkey -->
+                    <div class="fake-ad ad-punch-monkey" onclick="alert('You punched the monkey! You win... NOTHING! 🐵')">
+                        <div class="ad-title">PUNCH THE MONKEY!</div>
+                        <div class="monkey-target">🐵</div>
+                        <div style="color: #FFFFFF; font-size: 14px; font-weight: bold;">
+                            WIN A FREE<br>
+                            PALM PILOT!
+                        </div>
                     </div>
                 </td>
 
@@ -733,6 +1015,37 @@ Press any key to continue _
                             💾 File Size: 5MB<br>
                             🌐 Links: 42<br>
                         </font>
+                    </div>
+
+                    <!-- FAKE ADVERT 4: Free Cursors -->
+                    <div class="fake-ad ad-free-cursors" onclick="alert('✨ Downloading cursors.exe... Your computer will thank you! (probably)')">
+                        <div class="ad-title">✨ FREE CURSORS! ✨</div>
+                        <div class="ad-count">1000+</div>
+                        <div style="color: #FFFFFF; font-size: 12px; font-weight: bold; margin: 5px 0;">
+                            ANIMATED CURSORS<br>
+                            + SCREENSAVERS<br>
+                            + WALLPAPERS
+                        </div>
+                        <div class="cursor-icons">
+                            🔥 ⭐ 💀 ⚡ 🌈
+                        </div>
+                        <div style="color: #FFFF00; font-size: 14px; font-weight: bold;">
+                            100% FREE!
+                        </div>
+                    </div>
+
+                    <!-- FAKE ADVERT 5: Hot Singles -->
+                    <div class="fake-ad ad-hot-singles" onclick="alert('💕 Hot Singles in Population: 47! Click here to meet Webmasters in your area!')">
+                        <div class="ad-title">💕 HOT SINGLES! 💕</div>
+                        <div class="ad-location">
+                            in your area:<br>
+                            <span style="font-size: 14px;">Population: 47</span>
+                        </div>
+                        <div style="color: #FFFFFF; font-size: 11px; margin: 5px 0;">
+                            🔥 Webmasters<br>
+                            want to meet YOU!
+                        </div>
+                        <div class="ad-cta">CLICK HERE!</div>
                     </div>
                 </td>
             </tr>
