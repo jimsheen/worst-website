@@ -1,0 +1,1111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>★☆★ WELCOME TO THE WORST WEBSITE EVER ★☆★</title>
+    <!-- Clippy.js CSS (local) -->
+    <link rel="stylesheet" type="text/css" href="assets/clippy/clippy.css">
+    <style>
+        /* Clippy styles */
+        .clippy {
+            position: fixed !important;
+            z-index: 99999 !important;
+        }
+
+        /* Force Clippy balloon to be visible and properly positioned */
+        .clippy-balloon {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: fixed !important;
+            z-index: 100000 !important;
+            max-width: 250px !important;
+        }
+    </style>
+    <style>
+        /* Windows 95 Color Palette */
+        :root {
+            --win95-gray: #c0c0c0;
+            --win95-dark-gray: #808080;
+            --win95-blue: #000080;
+            --win95-light-blue: #0000FF;
+        }
+
+        * {
+            cursor: crosshair;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        button, .error-close, .error-button {
+            cursor: pointer;
+        }
+
+        #bigRedButton {
+            cursor: not-allowed;
+        }
+
+        #bigRedButton:hover {
+            cursor: pointer;
+        }
+
+        marquee {
+            cursor: move;
+        }
+
+        h1, h2, h3 {
+            cursor: help;
+        }
+
+        img {
+            cursor: zoom-in;
+        }
+
+        body {
+            background-color: #000000;
+            background-image: url('assets/gifs/bg-sparkles.gif');
+            background-repeat: repeat;
+            color: #00FF00;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* 90s style max width */
+        body > center {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Red Button Styles */
+        #bigRedButton {
+            display: block;
+            margin: 30px auto;
+            padding: 40px 80px;
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(145deg, #ff0000, #cc0000);
+            border: 8px outset #ff4444;
+            color: #ffff00;
+            text-shadow: 3px 3px 6px #000000;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+            box-shadow: 0 0 30px #ff0000, 0 0 50px #ff0000;
+            font-family: "Impact", "Arial Black", sans-serif;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        #bigRedButton:hover {
+            background: linear-gradient(145deg, #ff3333, #ff0000);
+            box-shadow: 0 0 40px #ff0000, 0 0 70px #ff0000;
+            transform: scale(1.1);
+        }
+
+        /* Windows 95 Error Dialog */
+        .error-dialog {
+            position: fixed;
+            background-color: var(--win95-gray);
+            border: 2px outset var(--win95-gray);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+            min-width: 300px;
+            font-family: "MS Sans Serif", "Microsoft Sans Serif", sans-serif;
+            font-size: 11px;
+            opacity: 0;
+            transition: opacity 0.1s;
+        }
+
+        .error-titlebar {
+            background: linear-gradient(to right, var(--win95-blue), var(--win95-light-blue));
+            color: white;
+            padding: 2px 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .error-close {
+            background-color: var(--win95-gray);
+            border: 1px outset var(--win95-gray);
+            width: 16px;
+            height: 14px;
+            text-align: center;
+            line-height: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+        }
+
+        .error-close:active {
+            border-style: inset;
+        }
+
+        .error-content {
+            padding: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .error-icon {
+            font-size: 32px;
+        }
+
+        .error-buttons {
+            padding: 8px;
+            text-align: center;
+            border-top: 1px solid var(--win95-dark-gray);
+        }
+
+        .error-button {
+            background-color: var(--win95-gray);
+            border: 2px outset var(--win95-gray);
+            padding: 4px 20px;
+            font-family: "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            cursor: pointer;
+            min-width: 75px;
+        }
+
+        .error-button:active {
+            border-style: inset;
+        }
+
+        /* BSOD Overlay */
+        #bsodOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0000AA;
+            color: white;
+            font-family: "Courier New", monospace;
+            z-index: 999999;
+            padding: 40px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        #bsodOverlay pre {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Clippy */
+        #clippy {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 150px;
+            z-index: 10000;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Content styles */
+        table {
+            border: 3px ridge #FFD700;
+            background-color: #000080;
+        }
+
+        td {
+            border: 2px groove #FF00FF;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #FF0000;
+            text-shadow: 3px 3px #FFFF00, 6px 6px #00FF00;
+            font-size: 48px;
+            animation: rainbow 3s linear infinite;
+            text-align: center;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        @keyframes rainbow {
+            0% { color: #FF0000; }
+            16% { color: #FF7F00; }
+            33% { color: #FFFF00; }
+            50% { color: #00FF00; }
+            66% { color: #0000FF; }
+            83% { color: #8B00FF; }
+            100% { color: #FF0000; }
+        }
+
+        marquee {
+            background-color: #FFFF00;
+            color: #FF0000;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Backdrop blur for error dialogs */
+        #errorBackdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+        }
+
+        /* Visitor counter */
+        .counter {
+            background-color: #000000;
+            padding: 10px;
+            display: inline-block;
+            border: 3px solid #FFD700;
+            font-family: "Courier New", monospace;
+            letter-spacing: 5px;
+        }
+
+        .counter-digit {
+            display: inline-block;
+            background: linear-gradient(to bottom, #FF0000, #990000);
+            color: #00FF00;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 5px 10px;
+            margin: 0 2px;
+            border: 2px outset #FF0000;
+            text-shadow: 0 0 5px #00FF00;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* Badge styles */
+        .badge {
+            margin: 5px;
+            vertical-align: middle;
+        }
+
+        /* Frame styles */
+        .frame-container {
+            border: 3px ridge #808080;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #c0c0c0;
+        }
+
+        .frame-title {
+            background: linear-gradient(to right, #000080, #0000FF);
+            color: white;
+            padding: 3px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Congratulations Dialog */
+        #congratsDialog {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--win95-gray);
+            border: 2px outset var(--win95-gray);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+            min-width: 400px;
+            font-family: "MS Sans Serif", "Microsoft Sans Serif", sans-serif;
+            font-size: 11px;
+            z-index: 100001;
+            display: none;
+        }
+
+        #congratsDialog .congrats-content {
+            padding: 20px;
+            text-align: center;
+            color: black;
+        }
+
+        #congratsDialog .congrats-content h2 {
+            color: #FF0000;
+            font-size: 20px;
+            margin: 10px 0;
+            animation: blinker 0.5s linear infinite;
+        }
+
+        #congratsDialog .congrats-content .prize-text {
+            font-size: 14px;
+            margin: 15px 0;
+            color: #000080;
+            font-weight: bold;
+        }
+
+        #congratsDialog .claim-button {
+            background: linear-gradient(to bottom, #FFFF00, #FFD700);
+            border: 3px outset #FFD700;
+            padding: 10px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #FF0000;
+            text-shadow: 1px 1px #FFFF00;
+            animation: pulse 0.8s infinite;
+        }
+
+        #congratsDialog .claim-button:active {
+            border-style: inset;
+        }
+
+        /* Download Progress Dialog */
+        #downloadDialog {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--win95-gray);
+            border: 2px outset var(--win95-gray);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            font-family: "MS Sans Serif", "Microsoft Sans Serif", sans-serif;
+            font-size: 11px;
+            z-index: 100002;
+            display: none;
+        }
+
+        #downloadDialog .download-content {
+            padding: 20px;
+            color: black;
+        }
+
+        #downloadDialog .download-icon {
+            float: left;
+            font-size: 32px;
+            margin-right: 15px;
+        }
+
+        #downloadDialog .download-text {
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+
+        #downloadDialog .progress-container {
+            clear: both;
+            margin-top: 15px;
+            border: 2px inset var(--win95-gray);
+            background-color: white;
+            height: 25px;
+            position: relative;
+        }
+
+        #downloadDialog .progress-bar {
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                #000080 0px,
+                #000080 10px,
+                #0000FF 10px,
+                #0000FF 20px
+            );
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        #downloadDialog .progress-text {
+            margin-top: 10px;
+            font-size: 11px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Error Backdrop -->
+    <div id="errorBackdrop"></div>
+
+    <!-- BSOD Overlay (hidden by default) -->
+    <div id="bsodOverlay">
+        <pre>
+Windows
+A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) +
+00010E36. The current application will be terminated.
+
+* Press any key to terminate the current application.
+* Press CTRL+ALT+DEL again to restart your computer. You will
+  lose any unsaved information in all applications.
+
+Press any key to continue _
+        </pre>
+    </div>
+
+    <!-- Congratulations Dialog -->
+    <div id="congratsDialog">
+        <div class="error-titlebar">
+            <span>🎉 CONGRATULATIONS! 🎉</span>
+            <span class="error-close" onclick="closeCongratsDialog()">X</span>
+        </div>
+        <div class="congrats-content">
+            <h2>★★★ YOU ARE THE 1,000,000TH VISITOR! ★★★</h2>
+            <div class="prize-text">
+                🎁 You have WON a FREE iPod Nano! 🎁<br><br>
+                Click below to claim your prize NOW!<br>
+                (Offer expires in 5 minutes!)
+            </div>
+            <button class="claim-button" onclick="claimPrize()">
+                🎁 CLICK HERE TO CLAIM YOUR PRIZE! 🎁
+            </button>
+        </div>
+    </div>
+
+    <!-- Download Progress Dialog -->
+    <div id="downloadDialog">
+        <div class="error-titlebar">
+            <span>💾 Downloading...</span>
+        </div>
+        <div class="download-content">
+            <div class="download-icon">💾</div>
+            <div class="download-text">
+                <strong>Downloading: FREE_IPOD.exe</strong><br>
+                From: totally-legit-prizes.ru<br>
+                To: C:\WINDOWS\system32\
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="progress-text" id="progressText">
+                0% complete
+            </div>
+        </div>
+    </div>
+
+    <!-- Clippy will be loaded by Clippy.js -->
+
+    <!-- No background music - embracing the silence of broken MIDI support -->
+
+    <!-- Main Content -->
+    <center>
+        <marquee behavior="scroll" direction="left" scrollamount="10">
+            ★★★ WELCOME TO THE WORST WEBSITE ON THE INTERNET ★★★
+        </marquee>
+
+        <!-- Visitor Counter -->
+        <div style="margin: 20px;">
+            <font color="#FFFF00" size="5">
+                <blink>YOU ARE VISITOR NUMBER:</blink>
+            </font>
+            <div class="counter">
+                <span class="counter-digit">1</span>
+                <span class="counter-digit">0</span>
+                <span class="counter-digit">0</span>
+                <span class="counter-digit">0</span>
+                <span class="counter-digit">0</span>
+                <span class="counter-digit">0</span>
+                <span class="counter-digit">0</span>
+            </div>
+        </div>
+
+        <table width="95%" cellspacing="0" cellpadding="0" bgcolor="#FF00FF">
+            <tr>
+                <td>
+                    <table width="100%" border="5" bordercolor="#00FFFF">
+                        <tr>
+                            <td bgcolor="#FFFF00">
+                                <h1 style="text-align: center;"><blink>⚠️ UNDER CONSTRUCTION ⚠️</blink></h1>
+                                <center>
+                                    <img src="assets/gifs/Under.gif" alt="Under Construction">
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <td bgcolor="#00FF00">
+                                <font face="Comic Sans MS" size="7" color="#FF0000">
+                                    <marquee direction="right">
+                                        BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 - 800x600 RESOLUTION
+                                    </marquee>
+                                </font>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Big Red Button - VERY PROMINENT! -->
+        <br>
+        <button id="bigRedButton" onclick="clickButton()">
+            🚨 DO NOT CLICK THIS BUTTON 🚨
+        </button>
+        <br>
+
+        <!-- Main Content Frame -->
+        <table width="95%" cellpadding="10">
+            <tr>
+                <!-- Left Sidebar -->
+                <td width="200" valign="top" bgcolor="#00FFFF">
+                    <div class="frame-container">
+                        <div class="frame-title">⚡ NAVIGATION ⚡</div>
+                        <font color="#FF0000" size="4">
+                            <marquee direction="up" height="150" scrollamount="3">
+                                <a href="#home">🏠 HOME</a><br><br>
+                                <a href="#about">👤 ABOUT ME</a><br><br>
+                                <a href="#guestbook">📖 GUESTBOOK</a><br><br>
+                                <a href="#links">🔗 LINKS</a><br><br>
+                                <a href="#awards">🏆 AWARDS</a><br><br>
+                                <a href="#contact">📧 CONTACT</a><br><br>
+                            </marquee>
+                        </font>
+                    </div>
+
+                    <div class="frame-container" style="margin-top: 10px;">
+                        <div class="frame-title">🌟 WEB RINGS 🌟</div>
+                        <center>
+                            <img class="badge" src="assets/gifs/hot-badge.gif" width="100" alt="Web Ring Badge">
+                            <br>
+                            <font size="2">
+                                <a href="#">&lt;&lt; PREV</a> |
+                                <a href="#">RANDOM</a> |
+                                <a href="#">NEXT &gt;&gt;</a>
+                            </font>
+                        </center>
+                    </div>
+                </td>
+
+                <!-- Main Content -->
+                <td valign="top" bgcolor="#FFFFFF">
+                    <table width="100%" border="3" bordercolor="#FF0000">
+                        <tr>
+                            <td bgcolor="#FFCCFF">
+                                <h2 style="color: #0000FF;">
+                                    <img src="assets/gifs/bg-sparkles.gif" width="30" alt="new">
+                                    WELCOME TO MY HOMEPAGE!
+                                    <img src="assets/gifs/bg-sparkles.gif" width="30" alt="hot">
+                                </h2>
+
+                                <img src="assets/gifs/bg-rainbow-sparkles.gif" width="100%" height="5" alt="divider">
+
+                                <center>
+                                    <p>
+                                        <font face="Arial" color="#FF00FF" size="5">
+                                            <blink>***THIS SITE IS BEST VIEWED WITH:</blink>
+                                        </font>
+                                    </p>
+                                </center>
+
+                                <center>
+                                    <table bgcolor="#FFFF00" border="2">
+                                        <tr>
+                                            <td>
+                                                <font color="#0000FF" size="4">
+                                                    ✅ Internet Explorer 4.0+<br>
+                                                    ✅ Netscape Navigator 4.0+<br>
+                                                    ✅ 800x600 Screen Resolution<br>
+                                                    ✅ Millions of Colors<br>
+                                                    ✅ Speakers ON!
+                                                </font>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+
+                                <img src="assets/gifs/bg-rainbow-sparkles.gif" width="100%" height="5" alt="divider">
+
+                                <h3 style="color: #FF0000;">
+                                    📖 ABOUT THIS SITE
+                                </h3>
+
+                                <center>
+                                    <p>
+                                        <font face="Comic Sans MS" size="4" color="#000000">
+                                            Welcome to the WORST website ever created! This site has been carefully
+                                            crafted to include every single terrible web design decision from the 1990s.
+                                            <br><br>
+                                            ⚠️ <b>WARNING:</b> Do NOT click the red button unless you want your
+                                            computer to experience a "fatal error"!
+                                            <br><br>
+                                            This site features:
+                                            <ul style="display: inline-block; text-align: left;">
+                                                <li>🎨 Animated GIF backgrounds</li>
+                                                <li>📦 Nested tables galore</li>
+                                                <li>✨ Marquee tags everywhere</li>
+                                                <li>💀 Comic Sans MS font</li>
+                                                <li>🌈 Clashing color schemes</li>
+                                                <li>📎 Clippy assistant</li>
+                                                <li>💥 Windows 95 error dialogs</li>
+                                            </ul>
+                                        </font>
+                                    </p>
+                                </center>
+
+                                <img src="assets/gifs/bg-rainbow-sparkles.gif" width="100%" height="5" alt="divider">
+
+                                <h3 style="color: #00FF00;">
+                                    🏆 MY AWARDS
+                                </h3>
+
+                                <center>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/gifs/new-badge.gif" width="80" alt="Award 1">
+                                                <br><font size="2">Worst Site 1999</font>
+                                            </td>
+                                            <td>
+                                                <img src="assets/gifs/hot-badge.gif" width="80" alt="Award 2">
+                                                <br><font size="2">GeoCities Gold</font>
+                                            </td>
+                                            <td>
+                                                <img src="assets/gifs/new-badge.gif" width="80" alt="Award 3">
+                                                <br><font size="2">Eyesore of Month</font>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+
+                                <img src="assets/gifs/bg-rainbow-sparkles.gif" width="100%" height="5" alt="divider">
+
+                                <center>
+                                    <font color="#FF0000" size="6">
+                                        <marquee width="80%">
+                                            💌 EMAIL ME! 💌
+                                        </marquee>
+                                    </font>
+                                    <br>
+                                    <a href="mailto:webmaster@worstsite.com">
+                                        <img src="assets/gifs/email-spinning.gif" width="50" alt="Email">
+                                    </a>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <!-- Right Sidebar -->
+                <td width="200" valign="top" bgcolor="#FFFF00">
+                    <div class="frame-container">
+                        <div class="frame-title">🔥 HOT LINKS 🔥</div>
+                        <font size="2">
+                            <blink>⭐</blink> <a href="#">Yahoo!</a><br>
+                            <blink>⭐</blink> <a href="#">AltaVista</a><br>
+                            <blink>⭐</blink> <a href="#">Lycos</a><br>
+                            <blink>⭐</blink> <a href="#">GeoCities</a><br>
+                            <blink>⭐</blink> <a href="#">Angelfire</a><br>
+                        </font>
+                    </div>
+
+                    <div class="frame-container" style="margin-top: 10px;">
+                        <div class="frame-title">📅 LAST UPDATED</div>
+                        <center>
+                            <font size="2">
+                                <b>November 23, 2025</b>
+                            </font>
+                        </center>
+                    </div>
+
+                    <div class="frame-container" style="margin-top: 10px;">
+                        <div class="frame-title">⚡ STATS ⚡</div>
+                        <font size="2">
+                            📊 Page Views: 1,000,000<br>
+                            👥 Visitors: 1,000,000<br>
+                            💾 File Size: 5MB<br>
+                            🌐 Links: 42<br>
+                        </font>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Footer -->
+        <table width="95%" bgcolor="#808080" border="2">
+            <tr>
+                <td>
+                    <center>
+                        <font color="#FFFFFF" size="2">
+                            <marquee scrollamount="5">
+                                © 2025 The Worst Website Ever | All Wrongs Reserved |
+                                Optimized for Internet Explorer 4.0 |
+                                Best viewed at 800x600 |
+                                This site uses cookies (the internet kind) 🍪
+                            </marquee>
+                        </font>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <script>
+        // Error dialog system
+        let dialogCount = 0;
+        let maxDialogs = 200; // Fill the screen completely
+        let errorSpawning = false;
+        let firstErrorShown = false;
+        let errorMessages = [
+            "Error: An error has occurred!",
+            "Warning: This button is dangerous!",
+            "Fatal Error: System malfunction detected!",
+            "Critical Error: Memory leak in progress!",
+            "Error 404: Common sense not found!",
+            "Alert: Your computer has been infected with terrible web design!",
+            "Error: Too many errors!",
+            "Warning: Errors multiplying exponentially!",
+            "System Error: Bad decision detected!",
+            "Error: I told you not to click it!",
+            "Windows Error: Illegal operation performed!",
+            "Error: This program has performed an illegal operation!",
+            "Warning: General Protection Fault!",
+            "Error: Stack overflow detected!",
+            "Fatal Error: Blue screen imminent!",
+            "Error: Kernel panic!",
+            "Warning: System32 has stopped working!",
+            "Error: Access violation at address 0x00000000!",
+            "Fatal: Segmentation fault (core dumped)",
+            "Error: The application has stopped responding!"
+        ];
+
+        function clickButton() {
+            // Hide the button
+            document.getElementById('bigRedButton').style.display = 'none';
+
+            // Show backdrop blur
+            document.getElementById('errorBackdrop').style.display = 'block';
+
+            // Show FIRST error dialog only
+            firstErrorShown = true;
+            dialogCount = 1;
+            createFirstErrorDialog();
+        }
+
+        function createFirstErrorDialog() {
+            const dialog = document.createElement('div');
+            dialog.className = 'error-dialog';
+            dialog.id = 'firstError';
+
+            // Center the first error
+            dialog.style.left = '50%';
+            dialog.style.top = '50%';
+            dialog.style.transform = 'translate(-50%, -50%)';
+            dialog.style.zIndex = 10000;
+
+            dialog.innerHTML = `
+                <div class="error-titlebar">
+                    <span>⚠️ Fatal Error</span>
+                    <span class="error-close" onclick="startCascade()">X</span>
+                </div>
+                <div class="error-content">
+                    <div class="error-icon">❌</div>
+                    <div>A fatal exception has occurred at 0028:C0011E36.<br><br>
+                    Click OK to continue or press X to terminate the error.</div>
+                </div>
+                <div class="error-buttons">
+                    <button class="error-button" onclick="startCascade()">OK</button>
+                </div>
+            `;
+
+            document.body.appendChild(dialog);
+
+            setTimeout(() => {
+                dialog.style.opacity = '1';
+            }, 10);
+        }
+
+        function startCascade() {
+            // Remove first error
+            const firstError = document.getElementById('firstError');
+            if (firstError) {
+                firstError.remove();
+            }
+
+            // Start the infinite error cascade
+            errorSpawning = true;
+            cascadeErrors();
+        }
+
+        function cascadeErrors() {
+            if (!errorSpawning || dialogCount >= maxDialogs) {
+                if (dialogCount >= maxDialogs) {
+                    triggerBSOD();
+                }
+                return;
+            }
+
+            // Spawn multiple errors at once (exponential growth)
+            const numToSpawn = Math.min(5, Math.floor(1 + dialogCount / 10));
+
+            for (let i = 0; i < numToSpawn; i++) {
+                dialogCount++;
+                createErrorDialog(dialogCount);
+            }
+
+            // Continue spawning with increasing frequency
+            const delay = Math.max(50, 300 - dialogCount * 2);
+            setTimeout(cascadeErrors, delay);
+        }
+
+        function createErrorDialog(count) {
+            if (count > maxDialogs) {
+                return;
+            }
+
+            const dialog = document.createElement('div');
+            dialog.className = 'error-dialog';
+
+            // Better positioning to fill screen
+            const maxX = window.innerWidth - 350;
+            const maxY = window.innerHeight - 180;
+            dialog.style.left = Math.max(10, Math.random() * maxX) + 'px';
+            dialog.style.top = Math.max(10, Math.random() * maxY) + 'px';
+            dialog.style.zIndex = 10000 + count;
+
+            const message = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+
+            dialog.innerHTML = `
+                <div class="error-titlebar">
+                    <span>⚠️ Error #${count}</span>
+                    <span class="error-close">X</span>
+                </div>
+                <div class="error-content">
+                    <div class="error-icon">❌</div>
+                    <div>${message}</div>
+                </div>
+                <div class="error-buttons">
+                    <button class="error-button">OK</button>
+                </div>
+            `;
+
+            document.body.appendChild(dialog);
+
+            // Add animation
+            setTimeout(() => {
+                dialog.style.opacity = '1';
+            }, 10);
+        }
+
+        function triggerBSOD() {
+            errorSpawning = false;
+
+            // Wait a moment for dramatic effect
+            setTimeout(() => {
+                // Remove all error dialogs
+                const dialogs = document.querySelectorAll('.error-dialog');
+                dialogs.forEach(d => d.remove());
+
+                // Hide backdrop
+                document.getElementById('errorBackdrop').style.display = 'none';
+
+                // Show BSOD
+                document.getElementById('bsodOverlay').style.display = 'block';
+
+                // Store broken state
+                sessionStorage.setItem('websiteBroken', 'true');
+
+                // Listen for any key press to restore
+                document.addEventListener('keydown', restoreWebsite, { once: true });
+                // Also allow click to restore
+                document.getElementById('bsodOverlay').addEventListener('click', restoreWebsite, { once: true });
+            }, 500);
+        }
+
+        function restoreWebsite() {
+            // Hide BSOD
+            document.getElementById('bsodOverlay').style.display = 'none';
+
+            // Clear broken state
+            sessionStorage.removeItem('websiteBroken');
+
+            // Show the red button again
+            document.getElementById('bigRedButton').style.display = 'block';
+
+            // Reset error count
+            dialogCount = 0;
+            errorSpawning = false;
+            firstErrorShown = false;
+        }
+
+        // Check if website was broken
+        window.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('websiteBroken') === 'true') {
+                document.getElementById('bsodOverlay').style.display = 'block';
+                // Listen for key press to restore
+                document.addEventListener('keydown', restoreWebsite, { once: true });
+                document.getElementById('bsodOverlay').addEventListener('click', restoreWebsite, { once: true });
+            } else {
+                // Show congratulations dialog after 3 seconds
+                setTimeout(showCongratsDialog, 3000);
+            }
+        });
+
+        // Show congratulations dialog
+        function showCongratsDialog() {
+            document.getElementById('errorBackdrop').style.display = 'block';
+            document.getElementById('congratsDialog').style.display = 'block';
+        }
+
+        // Close congratulations dialog
+        function closeCongratsDialog() {
+            document.getElementById('errorBackdrop').style.display = 'none';
+            document.getElementById('congratsDialog').style.display = 'none';
+        }
+
+        // Claim prize - start virus download
+        function claimPrize() {
+            // Hide congrats dialog
+            document.getElementById('congratsDialog').style.display = 'none';
+
+            // Show download dialog
+            document.getElementById('downloadDialog').style.display = 'block';
+
+            // Start progress bar animation
+            startDownload();
+        }
+
+        // Animate virus download progress
+        function startDownload() {
+            let progress = 0;
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+
+            const downloadInterval = setInterval(function() {
+                progress += Math.random() * 15; // Random increments for realism
+
+                if (progress >= 100) {
+                    progress = 100;
+                    progressBar.style.width = '100%';
+                    progressText.textContent = '100% complete - Installing virus...';
+
+                    clearInterval(downloadInterval);
+
+                    // Trigger BSOD after download completes
+                    setTimeout(function() {
+                        document.getElementById('downloadDialog').style.display = 'none';
+                        document.getElementById('errorBackdrop').style.display = 'none';
+                        triggerBSOD();
+                    }, 1000);
+                } else {
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = Math.floor(progress) + '% complete';
+                }
+            }, 200); // Update every 200ms
+        }
+    </script>
+
+    <!-- Clippy.js Scripts (jQuery from CDN, Clippy.js local) -->
+    <script src="https://unpkg.com/jquery@3.2.1"></script>
+    <script src="assets/clippy/clippy.min.js"></script>
+    <script type="text/javascript">
+        // Configure Clippy path
+        clippy.BASE_PATH = 'assets/clippy/agents/';
+
+        // Load Clippy!
+        clippy.load('Clippy', function(agent) {
+            // Catch and suppress sound errors
+            const originalPlaySound = agent._playSound;
+            agent._playSound = function(name) {
+                try {
+                    const result = originalPlaySound.call(this, name);
+                    if (result && result.catch) {
+                        result.catch(function() {}); // Silently catch autoplay errors
+                    }
+                    return result;
+                } catch(e) {
+                    // Suppress errors
+                }
+            };
+
+            // Show Clippy
+            agent.show();
+
+            // Position in bottom right
+            agent.moveTo(window.innerWidth - 150, window.innerHeight - 150);
+
+            // Speak after positioning
+            setTimeout(function() {
+                agent.speak("Congratulations! You're visitor #1,000,000! You've won a FREE prize! (Just kidding, it's a virus.)");
+            }, 2000);
+
+            // Array of annoying messages
+            const messages = [
+                "Did you click the big red button yet? You should totally click it.",
+                "This website won't win itself! Keep scrolling!",
+                "I see you're still here. That's... concerning.",
+                "Fun fact: You're visitor #1,000,000! What are the odds?",
+                "Have you tried refreshing the page? Just kidding, don't.",
+                "I'm not trapped in here with you. You're trapped in here with ME!",
+                "Error 404: Good taste not found.",
+                "Remember when websites looked good? Me neither.",
+                "Would you like me to help you find the exit? Too bad!",
+                "I may look friendly, but I'm part of the problem.",
+                "Click me! I do random stuff!",
+                "Still using Comic Sans in 2024? Bold choice.",
+                "That FREE iPod offer is totally legit. Trust me.",
+                "Did you download the free prize yet? It's definitely not a virus."
+            ];
+
+            // Make Clippy clickable with random behaviors
+            let clickCount = 0;
+            agent._el.on('click', function() {
+                clickCount++;
+
+                // Random message
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                agent.speak(randomMessage);
+
+                // Random animation
+                agent.animate();
+
+                // Every 5 clicks, do something special
+                if (clickCount % 5 === 0) {
+                    agent.play('Congratulate');
+                    setTimeout(function() {
+                        agent.speak("You've clicked me " + clickCount + " times. That's sad.");
+                    }, 1000);
+                }
+            });
+
+            // Random animations every 15-30 seconds
+            setInterval(function() {
+                if (Math.random() > 0.5) {
+                    agent.animate();
+                    if (Math.random() > 0.7) {
+                        const tips = [
+                            "Pro tip: Close this tab.",
+                            "Fun fact: This is my life now.",
+                            "Did you know? I hate my job.",
+                            "Reminder: You chose to be here.",
+                            "Don't forget to claim your free iPod!",
+                            "That popup wasn't suspicious at all, right?"
+                        ];
+                        agent.speak(tips[Math.floor(Math.random() * tips.length)]);
+                    }
+                }
+            }, 15000 + Math.random() * 15000);
+
+            // Make agent globally accessible for debugging
+            window.clippyAgent = agent;
+        });
+    </script>
+</body>
+</html>
